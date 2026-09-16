@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.image.ImageView?>
+<BorderPane xmlns="http://javafx.com/javafx/17"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="">
+    <center>
+
+        <GridPane hgap="10"
+                  vgap="12"
+                  padding="20">
+
+            <Label text="Nombres:"
+                   GridPane.columnIndex="0"
+                   GridPane.rowIndex="0"/>
+
+            <TextField fx:id="txtNombres"
+                       promptText="Ingrese los nombres"
+                       GridPane.columnIndex="1"
+                       GridPane.rowIndex="0"/>
+
+
+            <Label text="Apellidos:"
+                   GridPane.columnIndex="0"
+                   GridPane.rowIndex="1"/>
+
+            <TextField fx:id="txtApellidos"
+                       promptText="Ingrese los apellidos"
+                       GridPane.columnIndex="1"
+                       GridPane.rowIndex="1"/>
+
+
+            <Label text="Tipo de cliente:"
+                   GridPane.columnIndex="0"
+                   GridPane.rowIndex="2"/>
+
+            <ComboBox fx:id="cmbTipoCliente"
+                      prefWidth="200"
+                      GridPane.columnIndex="1"
+                      GridPane.rowIndex="2"/>
+
+
+            <Label text="Ciudad:"
+                   GridPane.columnIndex="0"
+                   GridPane.rowIndex="3"/>
+
+            <ComboBox fx:id="cmbCiudad"
+                      prefWidth="200"
+                      GridPane.columnIndex="1"
+                      GridPane.rowIndex="3"/>
+
+
+            <Label text="Fecha de nacimiento:"
+                   GridPane.columnIndex="0"
+                   GridPane.rowIndex="4"/>
+
+            <DatePicker fx:id="dpFechaNacimiento"
+                        GridPane.columnIndex="1"
+                        GridPane.rowIndex="4"/>
+
+
+            <Label text="Tipo de solicitud:"
+                   GridPane.columnIndex="0"
+                   GridPane.rowIndex="5"/>
+
+            <VBox spacing="5"
+                  GridPane.columnIndex="1"
+                  GridPane.rowIndex="5">
+
+                <RadioButton fx:id="rbConsulta"
+                             text="Consulta"/>
+
+                <RadioButton fx:id="rbSoporte"
+                             text="Soporte"/>
+
+                <RadioButton fx:id="rbServicio"
+                             text="Servicio"/>
+
+            </VBox>
+
+
+            <Label text="Servicios de interés:"
+                   GridPane.columnIndex="0"
+                   GridPane.rowIndex="6"/>
+
+            <VBox spacing="5"
+                  GridPane.columnIndex="1"
+                  GridPane.rowIndex="6">
+
+                <CheckBox fx:id="chkInternet"
+                          text="Internet"/>
+
+                <CheckBox fx:id="chkSoporte"
+                          text="Soporte técnico"/>
+
+                <CheckBox fx:id="chkSoftware"
+                          text="Software"/>
+
+            </VBox>
+
+
+            <Label text="Fotografía:"
+                   GridPane.columnIndex="0"
+                   GridPane.rowIndex="7"/>
+
+            <VBox spacing="8"
+                  GridPane.columnIndex="1"
+                  GridPane.rowIndex="7">
+
+                <ImageView fx:id="imgFotografia"
+                           fitWidth="150"
+                           fitHeight="150"
+                           preserveRatio="true"/>
+
+                <Button text="Seleccionar fotografía"
+                        onAction="#seleccionarFotografia"/>
+
+                <Button text="Seleccionar carpeta"
+                        onAction="#seleccionarCarpeta"/>
+
+            </VBox>
+
+
+            <HBox spacing="10"
+                  GridPane.columnIndex="1"
+                  GridPane.rowIndex="8">
+
+                <Button text="Guardar"
+                        onAction="#guardarCliente"/>
+
+                <Button text="Limpiar"
+                        onAction="#limpiarFormulario"/>
+
+                <Button text="Cancelar"
+                        onAction="#cancelar"/>
+
+            </HBox>
+
+        </GridPane>
+
+    </center>
+
+</BorderPane>
+
