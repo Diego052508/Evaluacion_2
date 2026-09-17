@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.ContextMenu?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.evaluacion_2.MainController"
+            prefHeight="400.0" prefWidth="600.0">
+    <MenuBar>
+        <menus>
+            <Menu text="Clientes">
+                <items>
+                    <MenuItem text="Registrar nuevo" onAction="#showRegistro"/>
+                    <MenuItem text="Consultar" onAction="#showConsulta"/>
+                </items>
+            </Menu>
+            <Menu text="Sesión">
+                <items>
+                    <MenuItem text="Cerrar sesión" onAction="#cerrarSesion"/>
+                </items>
+            </Menu>
+        </menus>
+    </MenuBar>
+
+    <ToolBar>
+        <items>
+            <Button text="Nuevo" onAction="#showRegistro">
+                <contextMenu>
+                    <ContextMenu>
+                        <items>
+                            <MenuItem text="¿Qué es esto?" onAction="#helpNuevo"></MenuItem>
+                        </items>
+                    </ContextMenu>
+                </contextMenu>
+            </Button>
+            <Button text="Ver" onAction="#showConsulta">
+                <contextMenu>
+                    <ContextMenu>
+                        <items>
+                            <MenuItem text="¿Qué es esto?" onAction="#helpVer"></MenuItem>
+                        </items>
+                    </ContextMenu>
+                </contextMenu>
+            </Button>
+        </items>
+    </ToolBar>
+    <HBox>
+        <Button text="Agregar" prefWidth="128" prefHeight="128" onAction="#showRegistro"/>
+        <Button text="Consultar" prefWidth="128" prefHeight="128" onAction="#showConsulta"/>
+    </HBox>
+</VBox>
