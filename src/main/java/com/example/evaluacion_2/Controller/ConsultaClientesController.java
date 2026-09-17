@@ -1,11 +1,12 @@
 package com.example.evaluacion_2.Controller;
 
 import com.example.evaluacion_2.model.Clientes;
+import javafx.beans.property.ReadOnlyObjectWrapper;
+import javafx.beans.property.ReadOnlyStringWrapper;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
-import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 
 import java.time.LocalDate;
@@ -33,19 +34,29 @@ public class ConsultaClientesController {
     @FXML
     public void initialize() {
         colNombre.setCellValueFactory(
-                new PropertyValueFactory<>("nombreCompleto")
+                celda -> new ReadOnlyStringWrapper(
+                        celda.getValue().getNombreCompleto()
+                )
         );
         colTipo.setCellValueFactory(
-                new PropertyValueFactory<>("tipoCliente")
+                celda -> new ReadOnlyStringWrapper(
+                        celda.getValue().getTipoCliente()
+                )
         );
         colCiudad.setCellValueFactory(
-                new PropertyValueFactory<>("ciudad")
+                celda -> new ReadOnlyStringWrapper(
+                        celda.getValue().getCiudad()
+                )
         );
         colFecha.setCellValueFactory(
-                new PropertyValueFactory<>("fechaNacimiento")
+                celda -> new ReadOnlyObjectWrapper<>(
+                        celda.getValue().getFechaNacimiento()
+                )
         );
         colSolicitud.setCellValueFactory(
-                new PropertyValueFactory<>("tipoSolicitud")
+                celda -> new ReadOnlyStringWrapper(
+                        celda.getValue().getTipoSolicitud()
+                )
         );
         tablaClientes.setItems(Clientes.getListaClientes());
     }
