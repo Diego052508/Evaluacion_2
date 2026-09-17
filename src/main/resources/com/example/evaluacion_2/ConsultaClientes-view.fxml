@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane
+        xmlns="http://javafx.com/javafx/21"
+        xmlns:fx="http://javafx.com/fxml/1"
+        fx:controller="com.example.evaluacion_2.Controller.ConsultaClientesController">
+
+    <top>
+        <VBox spacing="4">
+            <padding>
+                <Insets top="16" left="20" right="20" bottom="10"/>
+            </padding>
+
+            <Label
+                    text="Consulta de clientes"
+                    style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
+            <Label text="Haga doble clic sobre un cliente para visualizar su detalle."/>
+        </VBox>
+    </top>
+
+    <center>
+        <TableView
+                fx:id="tablaClientes"
+                onMouseClicked="#abrirDetalle">
+            <columns>
+                <TableColumn
+                        fx:id="colNombre"
+                        text="Nombre completo"
+                        prefWidth="190"/>
+                <TableColumn
+                        fx:id="colTipo"
+                        text="Tipo de cliente"
+                        prefWidth="135"/>
+                <TableColumn
+                        fx:id="colCiudad"
+                        text="Ciudad"
+                        prefWidth="120"/>
+                <TableColumn
+                        fx:id="colFecha"
+                        text="Fecha de nacimiento"
+                        prefWidth="145"/>
+                <TableColumn
+                        fx:id="colSolicitud"
+                        text="Tipo de solicitud"
+                        prefWidth="140"/>
+            </columns>
+
+            <BorderPane.margin>
+                <Insets top="8" bottom="20" left="20" right="20"/>
+            </BorderPane.margin>
+        </TableView>
+    </center>
+</BorderPane>

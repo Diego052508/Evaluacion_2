@@ -2,27 +2,42 @@ package com.example.evaluacion_2.model;
 
 import java.time.LocalDate;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+
 public class Clientes {
+
+    private static final ObservableList<Clientes> LISTA_CLIENTES =
+            FXCollections.observableArrayList();
+
     private String nombres;
     private String apellidos;
     private String tipoCliente;
     private String ciudad;
-    private String fechaNacimiento;
-    private String tipoSolicitud ;
-    private String servicios ;
+    private LocalDate fechaNacimiento;
+    private String tipoSolicitud;
+    private String servicios;
     private String rutaFotografia;
 
-    public Clientes(String nombres, String rutaFotografia, String servicios, String tipoSolicitud, String fechaNacimiento, String ciudad, String tipoCliente, String apellidos) {
+    public Clientes(
+            String nombres,
+            String apellidos,
+            String tipoCliente,
+            String ciudad,
+            LocalDate fechaNacimiento,
+            String tipoSolicitud,
+            String servicios,
+            String rutaFotografia
+    ) {
         this.nombres = nombres;
-        this.rutaFotografia = rutaFotografia;
-        this.servicios = servicios;
-        this.tipoSolicitud = tipoSolicitud;
-        this.fechaNacimiento = fechaNacimiento;
-        this.ciudad = ciudad;
-        this.tipoCliente = tipoCliente;
         this.apellidos = apellidos;
+        this.tipoCliente = tipoCliente;
+        this.ciudad = ciudad;
+        this.fechaNacimiento = fechaNacimiento;
+        this.tipoSolicitud = tipoSolicitud;
+        this.servicios = servicios;
+        this.rutaFotografia = rutaFotografia;
     }
-
 
     public String getNombres() {
         return nombres;
@@ -56,11 +71,11 @@ public class Clientes {
         this.ciudad = ciudad;
     }
 
-    public String getFechaNacimiento() {
+    public LocalDate getFechaNacimiento() {
         return fechaNacimiento;
     }
 
-    public void setFechaNacimiento(String fechaNacimiento) {
+    public void setFechaNacimiento(LocalDate fechaNacimiento) {
         this.fechaNacimiento = fechaNacimiento;
     }
 
@@ -86,5 +101,13 @@ public class Clientes {
 
     public void setRutaFotografia(String rutaFotografia) {
         this.rutaFotografia = rutaFotografia;
+    }
+
+    public String getNombreCompleto() {
+        return nombres + " " + apellidos;
+    }
+
+    public static ObservableList<Clientes> getListaClientes() {
+        return LISTA_CLIENTES;
     }
 }
