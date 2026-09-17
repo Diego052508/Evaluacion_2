@@ -38,41 +38,41 @@
                 <Insets top="18" bottom="18" left="20" right="20"/>
             </padding>
 
-            <Label text="Nombres:*" GridPane.rowIndex="0"/>
+            <Label text="Nombres:" GridPane.rowIndex="0"/>
             <TextField
                     fx:id="txtNombres"
                     promptText="Ingrese los nombres"
                     GridPane.columnIndex="1"
                     GridPane.rowIndex="0"/>
 
-            <Label text="Apellidos:*" GridPane.rowIndex="1"/>
+            <Label text="Apellidos:" GridPane.rowIndex="1"/>
             <TextField
                     fx:id="txtApellidos"
                     promptText="Ingrese los apellidos"
                     GridPane.columnIndex="1"
                     GridPane.rowIndex="1"/>
 
-            <Label text="Tipo de cliente:*" GridPane.rowIndex="2"/>
+            <Label text="Tipo de cliente:" GridPane.rowIndex="2"/>
             <ComboBox
                     fx:id="cmbTipoCliente"
                     prefWidth="210"
                     GridPane.columnIndex="1"
                     GridPane.rowIndex="2"/>
 
-            <Label text="Ciudad:*" GridPane.rowIndex="3"/>
+            <Label text="Ciudad:" GridPane.rowIndex="3"/>
             <ComboBox
                     fx:id="cmbCiudad"
                     prefWidth="210"
                     GridPane.columnIndex="1"
                     GridPane.rowIndex="3"/>
 
-            <Label text="Fecha de nacimiento:*" GridPane.rowIndex="4"/>
+            <Label text="Fecha de nacimiento:" GridPane.rowIndex="4"/>
             <DatePicker
                     fx:id="dpFechaNacimiento"
                     GridPane.columnIndex="1"
                     GridPane.rowIndex="4"/>
 
-            <Label text="Tipo de solicitud:*" GridPane.rowIndex="5"/>
+            <Label text="Tipo de solicitud:" GridPane.rowIndex="5"/>
             <VBox
                     spacing="4"
                     GridPane.columnIndex="1"
@@ -82,7 +82,7 @@
                 <RadioButton fx:id="rbServicio" text="Servicio"/>
             </VBox>
 
-            <Label text="Servicios de interés:*" GridPane.rowIndex="6"/>
+            <Label text="Servicios de interés:" GridPane.rowIndex="6"/>
             <VBox
                     spacing="4"
                     GridPane.columnIndex="1"
