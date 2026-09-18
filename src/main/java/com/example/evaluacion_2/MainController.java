@@ -13,21 +13,17 @@ public class MainController {
 
     @FXML
     public void cerrarSesion(ActionEvent event) {
-        // Retorna a tu ventana de inicio de sesión
         cambiarVentana(event, "Login-view.fxml", "Inicio de Sesión");
     }
 
     @FXML
     public void showRegistro(ActionEvent event) {
-        // Abre la ventana de registro
         cambiarVentana(event, "Registro-view.fxml", "Registro de Clientes");
     }
 
     @FXML
     public void showConsulta(ActionEvent event) {
-        // Por ahora imprime en consola. Cuando hagan la vista, descomenta la línea de abajo
         System.out.println("Mostrar ventana consulta");
-        // cambiarVentana(event, "Consulta-view.fxml", "Consulta de Clientes");
     }
 
     @FXML
@@ -48,14 +44,12 @@ public class MainController {
         alert.showAndWait();
     }
 
-    // Método utilitario para no repetir el código de cambio de pantallas
     private void cambiarVentana(ActionEvent event, String fxml, String titulo) {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(fxml));
             Parent root = fxmlLoader.load();
 
             Stage stage;
-            // Evaluamos el origen para evitar un NullPointerException al usar los menús superiores
             if (event.getSource() instanceof MenuItem) {
                 MenuItem menuItem = (MenuItem) event.getSource();
                 stage = (Stage) menuItem.getParentPopup().getOwnerWindow();
