@@ -9,49 +9,86 @@
 <?import javafx.scene.layout.*?>
 
 <VBox xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.example.evaluacion_2.MainController"
-            prefHeight="400.0" prefWidth="600.0">
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.example.evaluacion_2.MainController"
+      prefHeight="500.0"
+      prefWidth="700.0"
+      spacing="15">
+
+    <!-- Menú principal -->
     <MenuBar>
         <menus>
+
             <Menu text="Clientes">
                 <items>
-                    <MenuItem text="Registrar nuevo" onAction="#showRegistro"/>
-                    <MenuItem text="Consultar" onAction="#showConsulta"/>
+                    <MenuItem text="Registrar nuevo"
+                              onAction="#showRegistro"/>
+
+                    <MenuItem text="Consultar"
+                              onAction="#showConsulta"/>
                 </items>
             </Menu>
+
             <Menu text="Sesión">
                 <items>
-                    <MenuItem text="Cerrar sesión" onAction="#cerrarSesion"/>
+                    <MenuItem text="Cerrar sesión"
+                              onAction="#cerrarSesion"/>
                 </items>
             </Menu>
+
         </menus>
     </MenuBar>
 
+
+    <!-- Barra de herramientas -->
     <ToolBar>
         <items>
-            <Button text="Nuevo" onAction="#showRegistro">
+
+            <Button text="Agregar"
+                    onAction="#showRegistro"
+                    prefWidth="100"
+                    prefHeight="35">
+
                 <contextMenu>
                     <ContextMenu>
                         <items>
-                            <MenuItem text="¿Qué es esto?" onAction="#helpNuevo"></MenuItem>
+                            <MenuItem text="¿Qué es esto?"
+                                      onAction="#helpNuevo"/>
                         </items>
                     </ContextMenu>
                 </contextMenu>
+
             </Button>
-            <Button text="Ver" onAction="#showConsulta">
+
+
+            <Button text="Consultar"
+                    onAction="#showConsulta"
+                    prefWidth="100"
+                    prefHeight="35">
+
                 <contextMenu>
                     <ContextMenu>
                         <items>
-                            <MenuItem text="¿Qué es esto?" onAction="#helpVer"></MenuItem>
+                            <MenuItem text="¿Qué es esto?"
+                                      onAction="#helpVer"/>
                         </items>
                     </ContextMenu>
                 </contextMenu>
+
             </Button>
+
         </items>
     </ToolBar>
-    <HBox>
-        <Button text="Agregar" prefWidth="128" prefHeight="128" onAction="#showRegistro"/>
-        <Button text="Consultar" prefWidth="128" prefHeight="128" onAction="#showConsulta"/>
-    </HBox>
+
+
+    <!-- Mensaje de bienvenida -->
+    <VBox alignment="CENTER"
+          VBox.vgrow="ALWAYS">
+
+        <Label text="Bienvenido al sistema"
+              style="-fx-font-size: 32px;
+                     -fx-font-weight: bold;"/>
+
+    </VBox>
+
 </VBox>
