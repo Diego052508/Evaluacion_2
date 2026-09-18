@@ -1,4 +1,4 @@
-package com.example.evaluacion_2;
+package com.example.evaluacion_2.Controller;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -16,8 +16,11 @@ public class HelloApplication extends Application {
         primaryStage = stage;
 
         FXMLLoader loader = new FXMLLoader(
-                HelloApplication.class.getResource("Main-view.fxml")
+                HelloApplication.class.getResource(
+                        "/com/example/evaluacion_2/Login-view.fxml"
+                )
         );
+
         Scene scene = new Scene(loader.load(), 600, 400);
 
         stage.setTitle("Gestión de clientes");
@@ -51,19 +54,41 @@ public class HelloApplication extends Application {
     ) {
         try {
             FXMLLoader loader = new FXMLLoader(
-                    HelloApplication.class.getResource(archivoFxml)
+                    HelloApplication.class.getResource(
+                            "/com/example/evaluacion_2/" + archivoFxml
+                    )
             );
+
             Stage ventana = new Stage();
 
             ventana.initOwner(primaryStage);
             ventana.setTitle(titulo);
             ventana.setScene(new Scene(loader.load(), ancho, alto));
             ventana.show();
+
         } catch (IOException exception) {
             throw new IllegalStateException(
                     "No se pudo abrir la ventana: " + titulo,
                     exception
             );
+        }
+    }
+
+    public static void mostrarLogin() {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(
+                    HelloApplication.class.getResource("Login-view.fxml")
+            );
+
+            Scene scene = new Scene(fxmlLoader.load());
+
+            Stage stage = new Stage();
+            stage.setTitle("Inicio de Sesión");
+            stage.setScene(scene);
+            stage.show();
+
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 }

@@ -1,6 +1,5 @@
 package com.example.evaluacion_2.Controller;
 
-import com.example.evaluacion_2.HelloApplication;
 import com.example.evaluacion_2.model.Clientes;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -180,9 +179,18 @@ public class RegistroClienteController {
     }
 
     private boolean validarFormulario() {
+
         if (txtNombres.getText().trim().isEmpty()
                 || txtApellidos.getText().trim().isEmpty()) {
             return mostrarError("Debe ingresar nombres y apellidos.");
+        }
+
+        if (!txtNombres.getText().matches("[a-zA-ZáéíóúÁÉÍÓÚñÑ ]+")) {
+            return mostrarError("El nombre solo puede contener letras.");
+        }
+
+        if (!txtApellidos.getText().matches("[a-zA-ZáéíóúÁÉÍÓÚñÑ ]+")) {
+            return mostrarError("El apellido solo puede contener letras.");
         }
 
         if (cmbTipoCliente.getValue() == null || cmbCiudad.getValue() == null) {

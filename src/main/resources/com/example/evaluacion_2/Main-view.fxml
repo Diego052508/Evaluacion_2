@@ -10,12 +10,11 @@
 
 <VBox xmlns="http://javafx.com/javafx"
       xmlns:fx="http://javafx.com/fxml"
-      fx:controller="com.example.evaluacion_2.MainController"
+      fx:controller="com.example.evaluacion_2.Controller.MainController"
       prefHeight="500.0"
       prefWidth="700.0"
       spacing="15">
 
-    <!-- Menú principal -->
     <MenuBar>
         <menus>
 
@@ -39,8 +38,6 @@
         </menus>
     </MenuBar>
 
-
-    <!-- Barra de herramientas -->
     <ToolBar>
         <items>
 
